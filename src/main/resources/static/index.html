@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Clone - Microblogging</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Twitter Clone</h1>
+        <p>Microblogging de 140 caracteres</p>
+    </header>
+
+    <div class="main-content">
+        <div class="create-post">
+            <h3>Crear nuevo post</h3>
+            <div class="user-selection">
+                <label for="usuarioSelect">Seleccionar usuario:</label>
+                <select id="usuarioSelect">
+                    <option value="">Cargando usuarios...</option>
+                </select>
+            </div>
+            <textarea id="postContent" placeholder="¿Qué está pasando? (máximo 140 caracteres)" maxlength="140"></textarea>
+            <div class="post-actions">
+                <span id="charCount">0/140</span>
+                <button id="btnPost" onclick="crearPost()">Publicar</button>
+            </div>
+        </div>
+
+        <div class="posts-container">
+            <h3>Stream de Posts</h3>
+            <div id="postsList" class="posts-list">
+                <p>Cargando posts...</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="users-panel">
+            <h3>Usuarios</h3>
+            <div id="usersList">
+                <p>Cargando usuarios...</p>
+            </div>
+            <button onclick="crearUsuario()" class="btn-new-user">+ Nuevo Usuario</button>
+        </div>
+    </div>
+</div>
+
+<div id="userModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModal()">&times;</span>
+        <h3>Crear Nuevo Usuario</h3>
+        <input type="text" id="userName" placeholder="Nombre">
+        <input type="email" id="userEmail" placeholder="Email">
+        <button onclick="guardarUsuario()">Guardar Usuario</button>
+    </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

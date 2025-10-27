@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f8fa;
+    color: #14171a;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+header {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    color: #1da1f2;
+    margin-bottom: 10px;
+}
+
+.create-post {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.user-selection {
+    margin-bottom: 15px;
+}
+
+.user-selection label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.user-selection select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#postContent {
+    width: 100%;
+    height: 100px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: vertical;
+    font-family: inherit;
+    margin-bottom: 10px;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#charCount {
+    color: #657786;
+    font-size: 14px;
+}
+
+#btnPost {
+    background: #1da1f2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#btnPost:hover {
+    background: #1a91da;
+}
+
+#btnPost:disabled {
+    background: #aab8c2;
+    cursor: not-allowed;
+}
+
+.posts-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.posts-list {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.post {
+    border-bottom: 1px solid #e6ecf0;
+    padding: 15px 0;
+}
+
+.post:last-child {
+    border-bottom: none;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    background: #1da1f2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.user-info {
+    flex: 1;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #14171a;
+}
+
+.user-email {
+    color: #657786;
+    font-size: 14px;
+}
+
+.post-date {
+    color: #657786;
+    font-size: 12px;
+}
+
+.post-content {
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+.sidebar {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.users-panel h3 {
+    margin-bottom: 15px;
+    color: #1da1f2;
+}
+
+.user-item {
+    padding: 10px;
+    border-bottom: 1px solid #e6ecf0;
+    cursor: pointer;
+}
+
+.user-item:hover {
+    background: #f5f8fa;
+}
+
+.user-item.selected {
+    background: #e8f5fe;
+    border-left: 3px solid #1da1f2;
+}
+
+.btn-new-user {
+    width: 100%;
+    background: #17bf63;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-new-user:hover {
+    background: #15aa56;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+.modal input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal button {
+    width: 100%;
+    background: #1da1f2;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.loading {
+    text-align: center;
+    color: #657786;
+    padding: 20px;
+}
+
+.error {
+    background: #fee;
+    color: #c33;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
